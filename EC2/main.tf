@@ -28,6 +28,9 @@ resource "aws_instance" "ubuntu_t2_micro" {
         Name = "terraform_basics"
     }
 }
+output "instance_ips" {
+  value = aws_instance.ubuntu_t2_micro.*.public_ip
+}
 # example of ssh'ing to the EC2 instance
-# You will need to log into your aws account to get the DNS name or IP to log in
+# You will need to log into your aws account to get the DNS name or IP to log in *UPDATED to output the public IP to console so you don't need to log in
 #ssh -i "my_aws_key"  ubuntu@ec2-54-197-221-233.compute-1.amazonaws.com
