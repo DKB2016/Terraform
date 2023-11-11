@@ -28,6 +28,7 @@ resource "aws_instance" "ubuntu_t2_micro" {
         Name = "terraform_basics"
     }
 }
+# This will ouput your EC2 instance public IP to your console - Use this as the IP to ssh to in the command below
 output "instance_ips" {
   value = aws_instance.ubuntu_t2_micro.*.public_ip
 }
